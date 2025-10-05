@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>मेरी पहली वेबसाइट</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9999, #66ccff);
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ff6600;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+        #message {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .emoji {
+            font-size: 2em;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 स्वागत है! 🎉</h1>
+        <p>यह मेरी पहली वेबसाइट है</p>
+        
+        <div class="emoji">😊 👍 🚀</div>
+        
+        <button onclick="showMessage()">क्लिक करें</button>
+        <button onclick="changeColor()">रंग बदलें</button>
+        <button onclick="showTime()">समय देखें</button>
+        
+        <div id="message">यहाँ मैसेज दिखेगा...</div>
+        
+        <p><small>Apache Server पर चल रहा है</small></p>
+    </div>
+
+    <script>
+        function showMessage() {
+            const messages = [
+                "आप बहुत अच्छे हैं! 🌟",
+                "कोडिंग मजेदार है! 💻",
+                "आज का दिन शानदार रहे! ☀️",
+                "आपने बटन दबाया! 🎯"
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('message').innerHTML = randomMessage;
+        }
+        
+        function changeColor() {
+            const colors = ['#ff9999', '#99ff99', '#9999ff', '#ffff99', '#ff99ff'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.background = `linear-gradient(to right, ${randomColor}, #66ccff)`;
+            document.getElementById('message').innerHTML = "रंग बदल गया! 🌈";
+        }
+        
+        function showTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('hi-IN');
+            document.getElementById('message').innerHTML = `अभी समय है: ${timeString} ⏰`;
+        }
+    </script>
+</body>
+</html>
